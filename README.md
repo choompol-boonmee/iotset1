@@ -11,6 +11,8 @@
 
 ติดตั้ง python
 
+npm install -g --unsafe-perm node-red
+
 
 # iotset1
 

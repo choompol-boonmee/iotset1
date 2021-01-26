@@ -11,15 +11,14 @@ int cnt = 0;
 
 void setup(void){
 	Serial.begin(115200);
+
 	WiFi.mode(WIFI_STA);
 	WiFi.begin(ssid, password);
-
 	while (WiFi.status() != WL_CONNECTED) {
 		delay(500);
 		Serial.print(".");
 	}
-	Serial.println("");
-	Serial.print("IP address: ");
+	Serial.print("\n\nIP address: ");
 	Serial.println(WiFi.localIP());
 
 	server.onNotFound([]() {

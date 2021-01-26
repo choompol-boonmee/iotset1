@@ -6,7 +6,7 @@
 
 <https://google.com>
 
-[KEY]: https://google.com
+[KEY](https://google.com)
 
 <https://google.com>
 

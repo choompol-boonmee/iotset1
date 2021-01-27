@@ -15,11 +15,11 @@ void loop()
 {
 	cnt++;
 	if(cnt % 2) {
-		Serial.println("========== ON ===========");
+		Serial.println("========== ON 0,2 ===========");
 		digitalWrite(0, HIGH);
 		digitalWrite(2, HIGH);
 	} else {
-		Serial.println("========== OFF ===========");
+		Serial.println("========== OFF 0,2 ===========");
 		digitalWrite(0, LOW);
 		digitalWrite(2, LOW);
 	}

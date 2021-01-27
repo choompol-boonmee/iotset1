@@ -11,7 +11,11 @@
 
 ติดตั้ง python
 
-npm install -g --unsafe-perm node-red
+		python -m pip install --upgrade pip
+
+		pip install -U platformio
+
+		npm install -g --unsafe-perm node-red
 
 
 # iotset1

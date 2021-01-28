@@ -18,6 +18,7 @@
 3.  รัน โปรแกรมที่อยู่ในโฟลเดอร์ software
 
 	python-3.9.1-amd64.exe
+
 	pip install -U platformio
 
 4. เปิด command prompt หรือ cmd
@@ -27,7 +28,7 @@
 
 	dir
 
-	ตรวจสอบดูโฟลเดอร์ตัวอย่าง
+	ตรวจสอบดูโฟลเดอร์ตัวอย่าง ex01,ex02,ex03
 
 5.  รันตัวอย่างที่ 1
 
@@ -37,8 +38,8 @@
 
 6.  รันตัวอย่างที่ 2
 	
-	cd iotset1/examples/ex01
+	cd iotset1/examples/ex03
 
-	pio run -t build
+	pio run 
 
 

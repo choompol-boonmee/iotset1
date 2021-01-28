@@ -1,32 +1,29 @@
-# การติดตั้ง
+1. ติดตั้ง git
+	เปิด https://github.com/choompol-boonmee/iotset1
 
-## 1. ติดตั้ง git-bash
-      PortableGit-2.30.0.2-64-bit.7z.exe
-      หรือ ไปดาวน์โหลดที่ 
-      <https://git-scm.com/download/win>
-      
-## 2. รัน git-bash
-### เปิด FileExplorer 
-### โหลดข้อมูลจาก github.com
+2. เปิด command prompt หรือ cmd
+    รันคำสั่ง 
 
-ติดตั้ง python
+	git clone https://github.com/choompol-boonmee/iotset1.git
 
-		python -m pip install --upgrade pip
+3.  รัน โปรแกรมที่อยู่ในโฟลเดอร์ software
 
-		pip install -U platformio
+	python-3.9.1-amd64.exe
+	pip install -U platformio
 
-		npm install -g --unsafe-perm node-red
+4. เปิด command prompt หรือ cmd
+	เข้าไปโฟลเดอร์ iotset1
+	cd iotset1
+
+5.  รันตัวอย่างที่ 1
+
+	cd ex01
+	pio run -t build
+
+6.  รันตัวอย่างที่ 2
+	
+	ex ex02
+	pio run -t build
 
 
-# iotset1
-
-## EX01
-
-## EX02
-
-<https://google.com>
-
-[KEY](https://google.com)
-
-<https://google.com>
 

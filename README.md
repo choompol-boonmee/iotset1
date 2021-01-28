@@ -13,17 +13,19 @@
 
 4. เปิด command prompt หรือ cmd
 	เข้าไปโฟลเดอร์ iotset1
+
 	cd iotset1
 
 5.  รันตัวอย่างที่ 1
 
 	cd ex01
-	pio run -t build
+
+	pio run
 
 6.  รันตัวอย่างที่ 2
 	
 	ex ex02
-	pio run -t build
 
+	pio run -t build
 
 

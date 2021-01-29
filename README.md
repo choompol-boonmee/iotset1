@@ -31,6 +31,10 @@
 
 	<https://youtu.be/dI6IhS8MLw4>
 
+	3.3 การติดตั้ง nodejs
+
+	<https://youtu.be/t2zq3THYW3o>
+
 4. เปิด command prompt หรือ cmd
 	เข้าไปโฟลเดอร์ iotset1
 

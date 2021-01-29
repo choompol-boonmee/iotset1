@@ -21,6 +21,16 @@
 
 	pip install -U platformio
 
+	clip การติดตั้ง platformio
+
+	3.1 ติดตั้ง platformio
+
+	<https://youtu.be/ngTcU9QtK-M>
+
+	3.2 กรณีต้องล้าง python ของเดิมออกก่อน
+
+	<https://youtu.be/dI6IhS8MLw4>
+
 4. เปิด command prompt หรือ cmd
 	เข้าไปโฟลเดอร์ iotset1
 

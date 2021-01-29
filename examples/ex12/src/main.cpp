@@ -14,16 +14,12 @@ int value = 0;
 
 void setup_wifi() {
   delay(10);
-
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, password);
-
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.print(".");
   }
-  randomSeed(micros());
-  Serial.println("");
   Serial.println("WiFi connected");
 }
 
@@ -39,14 +35,9 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 void reconnect() {
   while (!client.connected()) {
-    Serial.print("Attempting MQTT connection...");
-    String clientId = "ESP8266Client-";
-    //clientId += String(random(0xffff), HEX);
-
-	if (client.connect(clientId.c_str(), "choompol", "choompol")) {
-    //if (client.connect(clientId.c_str())) {
+    String clientId = "Topic-receiver-1";
+    if (client.connect(clientId.c_str())) {
       Serial.println("connected");
-      client.publish("outTopic", "hello world");
       client.subscribe("inTopic");
     } else {
       Serial.println(" try again in 5 seconds");
@@ -63,20 +54,10 @@ void setup() {
 }
 
 void loop() {
-
-	  if (!client.connected()) {
+	if (!client.connected()) {
 	    reconnect();
-	  }
-	  client.loop();
-
-	unsigned long now = millis();
-	if (now - lastMsg > 2000) {
-		lastMsg = now;
-		++value;
-		snprintf (msg, MSG_BUFFER_SIZE, "hello world #%d", value);
-		Serial.println(msg);
-		client.publish("outTopic", msg);
 	}
-	delay(5000);
+	client.loop();
+	//delay(5000);
 }
 

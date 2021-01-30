@@ -10,7 +10,7 @@ void setup()
 void loop()
 {
 	cnt++;
-	Serial.printf("A:%d\n",cnt);
-	delay(300);
+	Serial.printf("PATTANI :%d\n",cnt);
+	delay(1000);
 }
 

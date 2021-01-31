@@ -10,7 +10,7 @@
 ## 3.โปรแกรม nodejs
 <https://nodejs.org/en/download/>
 
-### คำสั่งสำหรับการเขียนโปรแรแกม ไอโอที
+# คำสั่งสำหรับการเขียนโปรแรแกม ไอโอที
 ```
 - to upload
 pio run -t upload
@@ -21,7 +21,7 @@ pio device monitor
 pio device monitor -port COM3
 ```
 
-###ตามตรวจสอบ USB-serial บน windows
+#ตามตรวจสอบ USB-serial บน windows
 ```
 เปิด Control Panel
 เลือก Device Manager

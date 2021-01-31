@@ -1,35 +1,62 @@
-#include <Arduino.h>
 #include <ESP8266WiFi.h>
+#include <PubSubClient.h>
 
-int cnt = 0;
+const char* ssid = "CHOOMPOL_WIFI";
+const char* password = "choompol";
+const char* mqtt_server = "192.168.1.100";
 
-void setup()
-{
-	Serial.begin(115200);
+WiFiClient espClient;
+PubSubClient client(espClient);
+unsigned long lastMsg = 0;
+#define MSG_BUFFER_SIZE	(50)
+char msg[MSG_BUFFER_SIZE];
+int value = 0;
+
+void setup_wifi() {
 	WiFi.mode(WIFI_STA);
-	WiFi.disconnect();
-	delay(100);
-	Serial.println("\n\n\n");
+	WiFi.begin(ssid, password);
+	while (WiFi.status() != WL_CONNECTED) {
+		delay(500);
+		Serial.print(".");
+	}
+	randomSeed(micros());
+	Serial.println("");
+	Serial.println("WiFi connected");
 }
 
-void loop()
-{
-	Serial.println("========== เริ่มต้นแสกนหา Wifi ===========");
-	int n = WiFi.scanNetworks();
-	if(n == 0) {
-		Serial.println("NO NETWORK FOUND");
-	} else {
-		for(int i=0; i<n; i++) {
-			Serial.print(i + 1);
-			Serial.print(": ");
-			Serial.print(WiFi.SSID(i));
-			Serial.print(" (");
-			Serial.print(WiFi.RSSI(i));
-			Serial.print(")");
-			Serial.println((WiFi.encryptionType(i) == ENC_TYPE_NONE)?" ":"*");
-			delay(10);
-		}
+void reconnect() {
+  while (!client.connected()) {
+    String clientId = "ESP8266Client-";
+    if (client.connect(clientId.c_str())) {
+      Serial.println("connected");
+    } else {
+      Serial.println(" try again in 5 seconds");
+      delay(5000);
+    }
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  setup_wifi();
+  client.setServer(mqtt_server, 1883);
+}
+
+void loop() {
+
+	if (!client.connected()) {
+		reconnect();
 	}
-	Serial.println("\n\n");
+	client.loop();
+
+	unsigned long now = millis();
+	if (now - lastMsg > 2000) {
+		lastMsg = now;
+		++value;
+		snprintf (msg, MSG_BUFFER_SIZE, "Topic1 #%d", value);
+		Serial.println(msg);
+		client.publish("outTopic", msg);
+	}
+	delay(5000);
 }
 

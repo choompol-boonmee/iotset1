@@ -1,35 +1,41 @@
-#include <Arduino.h>
 #include <ESP8266WiFi.h>
+//#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
+
+const char* ssid = "MY-ESP8266";
+const char* password = "choompol";
+
+IPAddress local_ip(192, 168, 1, 1);
+IPAddress gateway(192, 168, 1, 1);
+IPAddress subnet(255, 255, 255, 0);
+
+ESP8266WebServer server(80);
 
 int cnt = 0;
 
-void setup()
-{
+void setup(void){
 	Serial.begin(115200);
-	WiFi.mode(WIFI_STA);
-	WiFi.disconnect();
+
+	WiFi.softAP(ssid, password);
+	WiFi.softAPConfig(local_ip, gateway, subnet);
 	delay(100);
-	Serial.println("\n\n\n");
+
+	server.onNotFound([]() {
+		server.send(404, "text/plain", "Path Not Found");
+	});
+
+	server.on("/", []() {
+		cnt++;
+		String msg = "Hello cnt: ";
+		msg += cnt;
+		server.send(200, "text/plain", msg);
+	});
+
+	server.begin();
+	Serial.println("HTTP server started");
 }
 
-void loop()
-{
-	Serial.println("========== เริ่มต้นแสกนหา Wifi ===========");
-	int n = WiFi.scanNetworks();
-	if(n == 0) {
-		Serial.println("NO NETWORK FOUND");
-	} else {
-		for(int i=0; i<n; i++) {
-			Serial.print(i + 1);
-			Serial.print(": ");
-			Serial.print(WiFi.SSID(i));
-			Serial.print(" (");
-			Serial.print(WiFi.RSSI(i));
-			Serial.print(")");
-			Serial.println((WiFi.encryptionType(i) == ENC_TYPE_NONE)?" ":"*");
-			delay(10);
-		}
-	}
-	Serial.println("\n\n");
+void loop(void){
+  server.handleClient();
 }
 

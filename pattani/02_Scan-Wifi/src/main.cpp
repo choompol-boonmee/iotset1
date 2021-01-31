@@ -25,8 +25,7 @@ void loop()
 			Serial.print(WiFi.SSID(i));
 			Serial.print(" (");
 			Serial.print(WiFi.RSSI(i));
-			Serial.print(")");
-			Serial.println((WiFi.encryptionType(i) == ENC_TYPE_NONE)?" ":"*");
+			Serial.println(")");
 			delay(10);
 		}
 	}

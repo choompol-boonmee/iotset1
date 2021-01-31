@@ -1,3 +1,34 @@
+
+#การติดตั้งโปรแกรมสำหรับไอโอที
+
+โปรแกรม git
+<https://git-scm.com/download/win>
+
+โปรแกรม python
+<https://www.python.org/downloads/windows/>
+
+โปรแกรม nodejs
+<https://nodejs.org/en/download/>
+
+#คำสั่งสำหรับการเขียนโปรแรแกม ไอโอที
+“““
+คำสั่ง upload
+pio run -t upload
+pio run -t upload --upload-port COM3
+
+คำสั่ง uonitor
+pio device monitor
+pio device monitor -port COM3
+“““
+
+#ตามตรวจสอบ USB-serial บน windows
+## เปิด Control Panel
+## เลือก Device Manager
+## มองหา Ports (COM/LPT)
+
+
+==============================================
+
 1. ติดตั้ง git
 
 	เปิดบราวเซอร์

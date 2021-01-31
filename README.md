@@ -21,7 +21,7 @@ pio device monitor
 pio device monitor -port COM3
 ```
 
-#ตามตรวจสอบ USB-serial บน windows
+# ตามตรวจสอบ USB-serial บน windows
 ```
 เปิด Control Panel
 เลือก Device Manager

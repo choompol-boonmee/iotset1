@@ -28,6 +28,36 @@ pio device monitor -port COM3
 มองหา Ports (COM/LPT)
 ```
 
+# การโหลดโปรแกรมด้วย git
+git clone https://github.com/choompol-boonmee/iotset1.git
+
+
+# - การแก้ไขกรณี Windows 10
+uninstall python ทั้งหมด
+ลบโฟลเดอร์ C:\Users\user\AppData\Local\Programs\Python
+ลบโฟลเดอร์ C:\pip
+ตรวจสอบตัวแปร PATH ว่ามีเกี่ยวกับ python หรือไม่
+install Python3.9
+
+# - กรณีใช้ Microsoft Store
+uninstall python ทั้งหมด
+ลบโฟลเดอร์ C:\Users\user\AppData\Local\Package\Python...
+install Python3.9
+
+# - การแก้ไขกรณี Windows 8
+uninstall python ทั้งหมด
+ลบโฟลเดอร์ C:\Users\user\AppData\Local\Programs\Python
+ลบโฟลเดอร์ C:\pip
+ตรวจสอบตัวแปร PATH ว่ามีเกี่ยวกับ python หรือไม่
+install Python3.9
+
+# - การแก้ไขกรณี Windows 7
+uninstall python ทั้งหมด
+ลบโฟลเดอร์ C:\Users\user\AppData\Local\Programs\Python
+ลบโฟลเดอร์ C:\pip
+ตรวจสอบตัวแปร PATH ว่ามีเกี่ยวกับ python หรือไม่
+install Python3.9 สำหรับ Windows 7 หรือก่อนหน้านั้น
+
 
 ==============================================
 
